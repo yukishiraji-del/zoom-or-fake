@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { ParticipantType, Question } from "@/data/questions";
 import { FeedbackState } from "@/hooks/useGame";
 import { GAME_CONFIG } from "@/lib/scoring";
+import { VideoCallChrome } from "@/components/VideoCallFrame";
 
 interface ZoomTileProps {
   question: Question;
@@ -11,14 +12,6 @@ interface ZoomTileProps {
   feedback: FeedbackState | null;
   disabled?: boolean;
   onSwipe?: (guess: ParticipantType) => void;
-}
-
-function MicIcon() {
-  return (
-    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1a7 7 0 0 0 6-6.9h-2Z" />
-    </svg>
-  );
 }
 
 export function ZoomTile({
@@ -80,14 +73,13 @@ export function ZoomTile({
         />
       </div>
 
-      <div className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-black/50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[.16em] text-white/80 backdrop-blur">
-        <span className="h-2 w-2 rounded-full bg-red-500" />
-        Live meeting
-      </div>
-
-      <div className="absolute right-3 top-3 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold text-white/75 backdrop-blur">
-        {Math.ceil(timeRemaining)}s
-      </div>
+      <VideoCallChrome
+        name={question.displayName}
+        role={question.jobTitle}
+        label="Live meeting"
+        statusRight={`${Math.ceil(timeRemaining)}s`}
+        showToolbar
+      />
 
       {Math.abs(dragX) > 18 && !disabled && (
         <div
@@ -98,18 +90,6 @@ export function ZoomTile({
           {dragX > 0 ? "REAL" : "FAKE"}
         </div>
       )}
-
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent px-4 pb-4 pt-20">
-        <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-white/10 text-white">
-            <MicIcon />
-          </div>
-          <div className="min-w-0">
-            <p className="truncate text-base font-bold leading-tight text-white">{question.displayName}</p>
-            <p className="truncate text-xs leading-tight text-white/50">{question.jobTitle}</p>
-          </div>
-        </div>
-      </div>
 
       <div className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-[#2d8cff]/40" />
 

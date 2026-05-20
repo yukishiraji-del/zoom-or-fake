@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { VideoCallChrome } from "@/components/VideoCallFrame";
 
 function VideoIcon() {
   return (
@@ -56,9 +57,7 @@ export default function HomePage() {
             ].map(([src, name]) => (
               <div key={src} className="relative overflow-hidden rounded-xl bg-[#0b1220]">
                 <img src={src} alt={`${name} preview`} className="h-full w-full object-cover" />
-                <div className="absolute inset-x-0 bottom-0 bg-black/50 px-2 py-1">
-                  <p className="truncate text-[10px] font-black text-white">{name}</p>
-                </div>
+                <VideoCallChrome name={name} label="call" statusRight="HD" compact />
               </div>
             ))}
           </div>

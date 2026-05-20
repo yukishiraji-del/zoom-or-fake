@@ -107,7 +107,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
     return (
       <>
         <div className="fixed left-1/2 top-2 z-50 w-full max-w-[430px] -translate-x-1/2 px-4">
-          <div className="ml-auto w-fit rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[10px] font-black text-emerald-100 backdrop-blur">
+          <div className="mx-auto w-fit rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[10px] font-black text-emerald-100 backdrop-blur">
             {state === "demo" ? "Demo mode" : `Signed in ${label}`}
           </div>
         </div>

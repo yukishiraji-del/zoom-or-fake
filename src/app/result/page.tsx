@@ -16,6 +16,8 @@ interface GameResult {
 type SubmitState = "idle" | "pending" | "success" | "error";
 type ShareState = "idle" | "shared" | "error";
 
+const WORLD_ID_BUSINESS_URL = "https://world.org/blog/announcements/zoom-docusign-world-id-for-business";
+
 function VideoIcon() {
   return (
     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -138,6 +140,27 @@ export default function ResultPage() {
             <p className="mt-1 text-[11px] font-semibold text-white/40">{item.label}</p>
           </div>
         ))}
+      </section>
+
+      <section className="rounded-2xl border border-[#2d8cff]/25 bg-[#2d8cff]/[0.12] p-4">
+        <div className="flex items-start gap-3">
+          <div className="mt-0.5 flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#2d8cff] text-white">
+            <VideoIcon />
+          </div>
+          <div>
+            <p className="text-sm font-black leading-snug text-white">
+              There should be a better way to verify that the person you’re talking to is real — and actually the intended person.
+            </p>
+            <a
+              href={WORLD_ID_BUSINESS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex rounded-full bg-white px-3 py-1.5 text-xs font-black text-slate-950 transition hover:bg-[#dceeff]"
+            >
+              Read about World ID for business
+            </a>
+          </div>
+        </div>
       </section>
 
       <section className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
