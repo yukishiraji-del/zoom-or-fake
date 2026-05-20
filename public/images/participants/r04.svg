@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-label="Video call participant r04">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0e8ff"/>
+      <stop offset="1" stop-color="#a894d8"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".16"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#111827" flood-opacity=".22"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="2" seed="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .035"/>
+      </feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <g opacity=".28">
+    <rect x="66" y="56" width="188" height="116" rx="8" fill="#ffffff" opacity=".22"/>
+    <rect x="642" y="82" width="178" height="102" rx="8" fill="#ffffff" opacity=".14"/>
+    <rect x="96" y="480" width="168" height="88" rx="8" fill="#ffffff" opacity=".13"/>
+    <path d="M0 520 C156 484 241 556 370 520 C512 481 644 510 900 454 V675 H0Z" fill="#ffffff" opacity=".14"/>
+  </g>
+  <g filter="url(#soft)">
+    <path d="M271 652 C287 539 344 492 450 492 C556 492 615 539 631 652Z" fill="#473b72"/>
+    <path d="M365 469 C370 514 532 514 536 469 L520 441 C501 462 399 462 380 441Z" fill="#c98d72"/>
+    <path d="M337 280 C332 191 386 133 453 133 C520 133 571 191 564 281 L548 318 C536 206 373 207 354 320Z" fill="#171923"/>
+    
+    <ellipse cx="333" cy="311" rx="25" ry="39" fill="#c98d72" opacity=".96"/>
+    <ellipse cx="567" cy="311" rx="25" ry="39" fill="#c98d72" opacity=".96"/>
+    <path d="M355 277 C365 174 534 174 545 277 C553 356 513 421 451 426 C385 419 346 352 355 277Z" fill="#c98d72"/>
+    <path d="M355 277 C365 174 534 174 545 277 C553 356 513 421 451 426 C385 419 346 352 355 277Z" fill="url(#shade)" opacity=".28"/>
+    <path d="M352 273 C372 172 531 174 548 276 C531 242 505 223 478 220 C435 216 393 224 352 273Z" fill="#171923"/>
+    <path d="M377 286 C394 276 415 276 432 287" fill="none" stroke="#171923" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+    <path d="M471 286 C488 276 510 277 526 288" fill="none" stroke="#171923" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+    <ellipse cx="405" cy="316" rx="8" ry="10" fill="#111827"/>
+    <ellipse cx="498" cy="316" rx="9" ry="10" fill="#111827"/>
+    <path d="M451 321 C446 348 441 358 452 366" fill="none" stroke="#9d624d" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+    <path d="M410 389 C431 407 475 408 496 389" fill="none" stroke="#7f463b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M362 263 C388 223 506 220 541 266" fill="none" stroke="#ffffff" stroke-width="4" opacity=".16"/>
+    
+  </g>
+  <g opacity=".86">
+    <rect x="28" y="28" width="194" height="50" rx="25" fill="#0f172a" opacity=".52"/>
+    <circle cx="58" cy="53" r="10" fill="#36d399"/>
+    <text x="78" y="59" font-family="Inter, Arial, sans-serif" font-size="18" fill="#ffffff" opacity=".92">Live</text>
+  </g>
+  <g opacity=".78">
+    <rect x="718" y="30" width="154" height="46" rx="23" fill="#0f172a" opacity=".45"/>
+    <text x="746" y="59" font-family="Inter, Arial, sans-serif" font-size="18" fill="#ffffff">HD</text>
+    <circle cx="836" cy="53" r="8" fill="#ffffff" opacity=".45"/>
+  </g>
+  <rect width="900" height="675" fill="#000000" opacity=".025" filter="url(#grain)"/>
+  <rect x="292" y="355" width="5" height="5" rx="1" fill="#ffffff" opacity="0.07"/><rect x="46" y="91" width="3" height="3" rx="1" fill="#ffffff" opacity="0.03"/><rect x="267" y="317" width="5" height="5" rx="1" fill="#ffffff" opacity="0.05"/><rect x="561" y="139" width="2" height="2" rx="1" fill="#ffffff" opacity="0.07"/><rect x="426" y="67" width="5" height="5" rx="1" fill="#ffffff" opacity="0.06"/><rect x="657" y="96" width="5" height="5" rx="1" fill="#ffffff" opacity="0.06"/><rect x="846" y="54" width="5" height="5" rx="1" fill="#ffffff" opacity="0.04"/><rect x="364" y="398" width="5" height="5" rx="1" fill="#ffffff" opacity="0.04"/><rect x="404" y="574" width="5" height="5" rx="1" fill="#ffffff" opacity="0.04"/><rect x="173" y="403" width="2" height="2" rx="1" fill="#ffffff" opacity="0.05"/><rect x="328" y="169" width="3" height="3" rx="1" fill="#ffffff" opacity="0.04"/><rect x="129" y="386" width="2" height="2" rx="1" fill="#ffffff" opacity="0.03"/>
+  <g>
+    <rect x="30" y="585" width="252" height="56" rx="10" fill="#111827" opacity=".76"/>
+    <circle cx="61" cy="613" r="17" fill="#334155"/>
+    <text x="61" y="620" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">R</text>
+    <text x="90" y="619" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Rina</text>
+  </g>
+</svg>
