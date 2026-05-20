@@ -28,67 +28,13 @@ function ToolbarIcon({ children, label }: { children: ReactNode; label: string }
   );
 }
 
-function OpeningScreen({ onStart }: { onStart: () => void }) {
-  return (
-    <div className="flex min-h-screen flex-col bg-[#0f1117] px-5 pb-5 pt-4 text-white">
-      <header className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2d8cff] text-white">
-            <VideoIcon />
-          </div>
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[.18em] text-white/40">meeting room</p>
-            <h1 className="text-base font-black leading-none text-white">Fake or Real?</h1>
-          </div>
-        </div>
-        <div className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[11px] font-bold text-emerald-200">
-          Challenge
-        </div>
-      </header>
-
-      <section className="flex flex-1 flex-col justify-center gap-6 py-6">
-        <div className="relative mx-auto aspect-square w-full max-w-[270px] overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.06] p-4 shadow-[0_24px_80px_rgba(0,0,0,.38)]">
-          <img
-            src="/images/app-icon.png"
-            alt="Fake or Real app icon"
-            className="h-full w-full rounded-[24px] object-cover"
-          />
-          <div className="absolute left-6 top-6 flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-white/80 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-            Waiting room
-          </div>
-          <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-2 rounded-full border border-white/10 bg-black/45 px-3 py-2 text-white/75 backdrop-blur">
-            <div className="flex justify-center">Mic</div>
-            <div className="flex justify-center">Cam</div>
-            <div className="flex justify-center text-emerald-200">ID</div>
-          </div>
-        </div>
-
-        <div className="space-y-4 text-center">
-          <p className="text-[11px] font-black uppercase tracking-[.2em] text-[#8cc5ff]">Deepfake challenge</p>
-          <h2 className="text-3xl font-black leading-tight text-white">
-            Can you really tell whether the person on the other side of the screen is who they claim to be?
-          </h2>
-          <p className="mx-auto max-w-[310px] text-sm font-medium leading-relaxed text-white/55">
-            You have 10 rounds, 3 lives, and only a few seconds to decide.
-          </p>
-        </div>
-      </section>
-
-      <button
-        onClick={onStart}
-        className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#2d8cff] py-4 text-base font-black text-white shadow-[0_18px_48px_rgba(45,140,255,.28)] transition hover:bg-blue-400 active:scale-[0.99]"
-      >
-        <VideoIcon />
-        Start Challenge
-      </button>
-    </div>
-  );
-}
-
 export default function GamePage() {
   const { state, startGame, answer, nextRound } = useGame();
   const router = useRouter();
+
+  useEffect(() => {
+    startGame();
+  }, [startGame]);
 
   useEffect(() => {
     if (state.phase !== "feedback") return;
@@ -114,17 +60,12 @@ export default function GamePage() {
     answer(guess);
   }
 
-  function startChallenge() {
-    if (process.env.NEXT_PUBLIC_WLD_APP_ID && MiniKit.isInstalled()) {
-      void MiniKit.commandsAsync
-        .sendHapticFeedback({ hapticsType: "impact", style: "medium" })
-        .catch(() => undefined);
-    }
-    startGame();
-  }
-
   if (state.phase === "idle") {
-    return <OpeningScreen onStart={startChallenge} />;
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#0f1117]">
+        <div className="text-sm font-semibold text-white/40">Loading...</div>
+      </div>
+    );
   }
 
   const question = state.questions[state.currentIndex];

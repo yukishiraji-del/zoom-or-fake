@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { VideoCallChrome } from "@/components/VideoCallFrame";
 
 function VideoIcon() {
   return (
@@ -47,49 +46,33 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_22px_70px_rgba(0,0,0,.28)]">
-          <div className="grid aspect-[4/3] grid-cols-2 gap-3 bg-[#1f2937] p-4">
-            {[
-              ["/images/photos/real/real-03.jpg", "Sora"],
-              ["/images/photos/fake/fake-04.jpg", "Mika"],
-              ["/images/photos/real/real-07.jpg", "Leo"],
-              ["/images/photos/fake/fake-09.jpg", "Rio"],
-            ].map(([src, name]) => (
-              <div key={src} className="relative overflow-hidden rounded-xl bg-[#0b1220]">
-                <img src={src} alt={`${name} preview`} className="h-full w-full object-cover" />
-                <VideoCallChrome name={name} label="call" statusRight="HD" compact />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 border-t border-white/10 text-center">
-            <div className="py-3">
-              <p className="text-xl font-black text-white">10</p>
-              <p className="text-[11px] font-semibold text-white/40">Rounds</p>
+        <div className="space-y-5 rounded-[24px] border border-white/10 bg-white/[0.045] px-4 py-5 text-center shadow-[0_22px_70px_rgba(0,0,0,.28)]">
+          <div className="relative mx-auto aspect-square w-full max-w-[236px] overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.06] p-4 shadow-[0_18px_60px_rgba(0,0,0,.34)]">
+            <img
+              src="/images/app-icon.png"
+              alt="Fake or Real app icon"
+              className="h-full w-full rounded-[22px] object-cover"
+            />
+            <div className="absolute left-6 top-6 flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1 text-[9px] font-black uppercase tracking-[.16em] text-white/80 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,.8)]" />
+              Waiting room
             </div>
-            <div className="border-x border-white/10 py-3">
-              <p className="text-xl font-black text-[#2d8cff]">3</p>
-              <p className="text-[11px] font-semibold text-white/40">Lives</p>
-            </div>
-            <div className="py-3">
-              <p className="text-xl font-black text-yellow-300">300</p>
-              <p className="text-[11px] font-semibold text-white/40">Max pts</p>
+            <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-2 rounded-full border border-white/10 bg-black/45 px-3 py-2 text-sm font-semibold text-white/75 backdrop-blur">
+              <div className="flex justify-center">Mic</div>
+              <div className="flex justify-center">Cam</div>
+              <div className="flex justify-center text-emerald-200">ID</div>
             </div>
           </div>
-        </div>
 
-        <div className="grid gap-2">
-          {[
-            "Watch screen noise, face edges, and light direction",
-            "Answer faster to score more points",
-            "In the Mini App, sign in first with World wallet",
-          ].map((item, index) => (
-            <div key={item} className="flex items-center gap-3 rounded-xl bg-white/[0.06] px-3 py-2.5">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-xs font-black text-white/70">
-                {index + 1}
-              </span>
-              <span className="text-sm font-semibold text-white/70">{item}</span>
-            </div>
-          ))}
+          <div className="space-y-3">
+            <p className="text-[11px] font-black uppercase tracking-[.22em] text-[#8cc5ff]">Deepfake challenge</p>
+            <h2 className="text-[28px] font-black leading-tight text-white">
+              Can you really tell whether the person on the other side of the screen is who they claim to be?
+            </h2>
+            <p className="mx-auto max-w-[310px] text-sm font-semibold leading-relaxed text-white/50">
+              You have 10 rounds, 3 lives, and only a few seconds to decide.
+            </p>
+          </div>
         </div>
       </section>
 
