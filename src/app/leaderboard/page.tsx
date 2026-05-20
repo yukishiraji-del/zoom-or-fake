@@ -70,7 +70,7 @@ export default function LeaderboardPage() {
           Back
         </Link>
         <div className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[11px] font-black text-emerald-200">
-          Logged-in players
+          Weekly scores
         </div>
       </header>
 
@@ -78,7 +78,7 @@ export default function LeaderboardPage() {
         <p className="text-[11px] font-bold uppercase tracking-[.18em] text-white/40">weekly ranking</p>
         <h1 className="mt-1 text-3xl font-black text-white">Leaderboard</h1>
         <p className="mt-1 text-sm font-medium text-white/50">
-          {isLive ? "This week's scores from signed-in players." : "Demo scores are shown until you submit a live score."}
+          {isLive ? "This week's submitted scores." : "Demo scores are shown until you submit a live score."}
         </p>
       </section>
 

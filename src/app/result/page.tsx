@@ -168,11 +168,11 @@ export default function ResultPage() {
           <div>
             <p className="text-base font-black text-white">Weekly Leaderboard</p>
             <p className="mt-1 text-xs leading-relaxed text-white/60">
-              Submit your score as a signed-in player. No extra World ID verification is used after the game.
+              Submit your score to the weekly ranking. No extra World ID verification is used after the game.
             </p>
           </div>
           <span className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[10px] font-black text-emerald-200">
-            Login
+            Score
           </span>
         </div>
 

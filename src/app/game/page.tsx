@@ -83,7 +83,7 @@ export default function GamePage() {
           </div>
         </div>
         <div className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-[11px] font-bold text-emerald-200">
-          Signed in
+          Live game
         </div>
       </header>
 
